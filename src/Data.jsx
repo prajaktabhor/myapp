@@ -27,3 +27,12 @@ export const packages = [
     
     
   ];
+
+  export const addOnOption = [
+      { title: 'Hard Water Stain Removal', min: '45min ', price: '249.00₹' },
+      { title: 'Rain-X-Complete', min: '45 mins', price: '249.00₹' },
+      { title: 'Seat Deep Cleaning', min: '45 mins', price: '249.00₹' },
+      { title: 'Wax Polishing (Hand)', min: '45 mins', price: '249.00₹' },
+      { title: 'Package 5', min: '50 mins', price: '249.00₹' },
+    ];
+  

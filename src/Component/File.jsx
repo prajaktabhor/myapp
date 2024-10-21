@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
-import Booking from './Booking';
+import React, { useState } from "react";
+import Booking from "./Booking";
+import logo from "../assests/main.png";
+import { Navigate } from "react-router-dom";
+import hatchback from "../assests/Hatchback.png";
+import Sedan from "../assests/Sedan.png";
+import  CompactSUV  from "../assests/Compact SUV.png";
+import SUV from "../assests/SUV.png";
+
 
 const File = () => {
-  const [selectedVehicle, setSelectedVehicle] = useState('Hatchback');
+  const [selectedVehicle, setSelectedVehicle] = useState("Hatchback");
   const [showBooking, setShowBooking] = useState(false);
 
   const onNext = () => {
@@ -23,7 +30,7 @@ const File = () => {
     <div className="items-center justify-start px-4 md:px-10 lg:px-16 -mt-12">
       <div className="text-center">
         <img
-          src="car.png"
+          src={logo}
           className="w-60 h-60 sm:w-64 sm:h-64 object-contain mx-auto"
           alt="Car"
         />
@@ -38,7 +45,9 @@ const File = () => {
         </li>
         <li className="flex flex-col ml-4 sm:ml-5">
           <h1 className="font-bold text-lg sm:text-2xl">Vehicle Type</h1>
-          <p className="mt-2 text-sm sm:text-md font-thin">Select vehicle type below</p>
+          <p className="mt-2 text-sm sm:text-md font-thin">
+            Select vehicle type below
+          </p>
         </li>
       </ul>
 
@@ -46,41 +55,65 @@ const File = () => {
         <ul className="flex flex-wrap justify-center sm:justify-end p-5 sm:gap-4 ml-14">
           <li
             className={`p-6 border ${
-              selectedVehicle === 'Hatchback' ? 'border-pink-500' : 'border-transparent'
+              selectedVehicle === "Hatchback"
+                ? "border-pink-500"
+                : "border-transparent"
             } rounded-xl px-20 py-1 flex flex-col items-center hover:rounded-3xl cursor-pointer`}
-            onClick={() => selectVehicle('Hatchback')}
+            onClick={() => selectVehicle("Hatchback")}
           >
-            <img src="car1.png" className="sm:w-22 sm:h-12 mt-3" alt="Hatchback" />
+            <img
+              src={hatchback}
+              className="sm:w-22 sm:h-12 mt-3"
+              alt="Hatchback"
+            />
             <p className="mb-2 text-center text-pink-500">Hatchback</p>
           </li>
 
           <li
             className={`p-6 border ${
-              selectedVehicle === 'Sedan' ? 'border-pink-500' : 'border-transparent'
+              selectedVehicle === "Sedan"
+                ? "border-pink-500"
+                : "border-transparent"
             } hover:border-pink-500 rounded-xl px-20 py-1 flex flex-col items-center hover:rounded-3xl cursor-pointer`}
-            onClick={() => selectVehicle('Sedan')}
+            onClick={() => selectVehicle("Sedan")}
           >
-            <img src="car2.png" className="w-22 h-12 sm:w-28 sm:h-14 mt-2" alt="Sedan" />
+            <img
+              src={Sedan}
+              className="w-22 h-12 sm:w-28 sm:h-14 mt-2"
+              alt="Sedan"
+            />
             <p className="mt-2 text-center">Sedan</p>
           </li>
 
           <li
             className={`p-6 border ${
-              selectedVehicle === 'Compact SUV' ? 'border-pink-500' : 'border-transparent'
+              selectedVehicle === "Compact SUV"
+                ? "border-pink-500"
+                : "border-transparent"
             } hover:border-pink-500 rounded-xl px-20 py-1 flex flex-col items-center hover:rounded-3xl cursor-pointer`}
-            onClick={() => selectVehicle('Compact SUV')}
+            onClick={() => selectVehicle("Compact SUV")}
           >
-            <img src="car3.png" className="w-22 h-12 sm:w-28 sm:h-14 mt-2" alt="Compact SUV" />
+            <img
+              src={CompactSUV}
+              className="w-22 h-12 sm:w-28 sm:h-14 mt-2"
+              alt="Compact SUV"
+            />
             <p className="mt-2 text-center mb-1">Compact SUV</p>
           </li>
 
           <li
             className={`p-6 border ${
-              selectedVehicle === 'SUV' ? 'border-pink-500' : 'border-transparent'
+              selectedVehicle === "SUV"
+                ? "border-pink-500"
+                : "border-transparent"
             } hover:border-pink-500 rounded-xl px-20 py-1 flex flex-col items-center hover:rounded-3xl cursor-pointer`}
-            onClick={() => selectVehicle('SUV')}
+            onClick={() => selectVehicle("SUV")}
           >
-            <img src="car4.png" className="w-22 h-12 sm:w-28 sm:h-14 mt-2" alt="SUV" />
+            <img
+              src={SUV}
+              className="w-22 h-12 sm:w-28 sm:h-14 mt-2"
+              alt="SUV"
+            />
             <p className="mt-2 text-center">SUV</p>
           </li>
         </ul>
@@ -89,7 +122,7 @@ const File = () => {
       <div className="flex justify-center">
         <button
           className={`mt-6 px-8 py-3 ${
-            selectedVehicle ? 'bg-pink-600' : 'bg-gray-400'
+            selectedVehicle ? "bg-pink-600" : "bg-gray-400"
           } text-white `}
           onClick={onNext}
           disabled={!selectedVehicle}
