@@ -27,8 +27,6 @@ const Login = () => {
             setPasswordError('');
         }
     };
-  
-
 
     useEffect(() => {
         if (!emailError && !passwordError && email && password) {
@@ -38,67 +36,21 @@ const Login = () => {
         }
     }, [emailError, passwordError, email, password]); 
 
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     const payload = { email, password };
-    //     console.log('Payload:', payload);
-        
-    //     try {
-    //         const response = await axios.post('https://dummyjson.com/auth/login', payload);  
-                        
-    //         console.log('Login successful:', response.data);
-    //         setLoginStatus('success'); 
-        
-            
-    //     } catch (err) {
-    //         console.error('Login failed:', err);
-    //         setLoginStatus('error'); 
-    //     }
-    // };
-    
-    
-    
-    // const handleSubmit=(e)=>{
-    //     e.preventDefault();
-    //     const payload = { email, password };
-    //     console.log(payload); // Add this line before the axios call
-
-    //     axios.post("https://dummyjson.com/auth/login",payload)
-    //     .then((Response)=>{
-    //         console.log(Response);
-            
-    //     })
-    // }
-
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         const payload = { email , password };
-        console.log('Payload:', payload);
-    
         try {
             const response = await axios.post('https://dummyjson.com/auth/login', payload, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
             });
-            console.log('Login successful:', response.data);
             setLoginStatus('success');
         } catch (err) {
-            if (err.response) {
-                console.error('Login failed:', err.response.data); 
-                setLoginStatus('error');
-            } else {
-                console.error('Network error or other issue:', err.message);
-                setLoginStatus('error');
-            }
+            console.error('Login failed:', err.response.data); 
         }
     };
     
-    
-
-
-
     return (
         <div className="max-w-sm mx-auto mt-12 p-6 border border-gray-300 rounded-md shadow-lg bg-gray-50">
             <h2 className="text-2xl text-center mb-4 text-gray-800">Login</h2>

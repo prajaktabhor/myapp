@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import Booking from "./Booking";
 import logo from "../assests/main.png";
 import { Navigate } from "react-router-dom";
+import hatchback from "../assests/Hatchback.png";
+import Sedan from "../assests/Sedan.png";
+import  CompactSUV  from "../assests/Compact SUV.png";
+import SUV from "../assests/SUV.png";
+
 
 const File = () => {
   const [selectedVehicle, setSelectedVehicle] = useState("Hatchback");
@@ -57,7 +62,7 @@ const File = () => {
             onClick={() => selectVehicle("Hatchback")}
           >
             <img
-              src="Hatchback.png"
+              src={hatchback}
               className="sm:w-22 sm:h-12 mt-3"
               alt="Hatchback"
             />
@@ -73,7 +78,7 @@ const File = () => {
             onClick={() => selectVehicle("Sedan")}
           >
             <img
-              src="Sedan.png"
+              src={Sedan}
               className="w-22 h-12 sm:w-28 sm:h-14 mt-2"
               alt="Sedan"
             />
@@ -89,7 +94,7 @@ const File = () => {
             onClick={() => selectVehicle("Compact SUV")}
           >
             <img
-              src="Compact SUV.png"
+              src={CompactSUV}
               className="w-22 h-12 sm:w-28 sm:h-14 mt-2"
               alt="Compact SUV"
             />
@@ -105,7 +110,7 @@ const File = () => {
             onClick={() => selectVehicle("SUV")}
           >
             <img
-              src="SUV.png"
+              src={SUV}
               className="w-22 h-12 sm:w-28 sm:h-14 mt-2"
               alt="SUV"
             />

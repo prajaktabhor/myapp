@@ -11,7 +11,7 @@ import SignUp from "./Component/SignUp";
 function App() {
   return (
     <>
-      {/* <File/> */}
+      <File/>
       {/* <Booking/> */}
       {/* <AddAnOption/>  */}
       {/* <BookingSummary/> */}
