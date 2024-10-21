@@ -1,24 +1,25 @@
-import React from 'react';
-import { packages } from '../Data.jsx';
-import { useState } from 'react';
-import AddAnOption from './AddAnOption';
+import React from "react";
+import { packages  } from "../Data";
+import { useState } from "react";
+import AddAnOption from "./AddAnOption";
+import logo from "../assests/main.png";
 const Booking = () => {
   const [showAddAnOption, setShowAddAnOption] = useState(false);
 
   const onNext = () => {
-    setShowAddAnOption(true); 
+    setShowAddAnOption(true);
   };
 
   if (showAddAnOption) {
-    return <AddAnOption />; 
+    return <AddAnOption />;
   }
 
   return (
     <div className="items-center justify-start px-4 md:px-10 lg:px-16 -mt-12">
       <div className="text-center">
         <img
-          src="car.png"
-          className="w-60 h-60 sm:w-64 sm:h-64 object-contain mx-auto"
+          src={logo}
+          className="  w-60 h-60 sm:w-64 sm:h-64 object-contain mx-auto"
           alt="Car"
         />
       </div>
@@ -33,7 +34,9 @@ const Booking = () => {
           </li>
           <li className="flex flex-col ml-4 sm:ml-5">
             <h1 className="font-bold text-lg sm:text-2xl">Wash packages</h1>
-            <p className="mt-2 text-sm sm:text-md font-thin">Which wash is best for your vehicle?</p>
+            <p className="mt-2 text-sm sm:text-md font-thin">
+              Which wash is best for your vehicle?
+            </p>
           </li>
         </ul>
       </div>
@@ -42,14 +45,18 @@ const Booking = () => {
           {packages.map((pkg, index) => (
             <li
               key={index}
-              className="relative p-6 border border-gray-300 flex flex-col items-center w-60 h-auto min-h-[300px] sm:min-h-[450px]" 
+              className="relative p-6 border border-gray-300 flex flex-col items-center w-60 h-auto min-h-[300px] sm:min-h-[450px]"
             >
               <h1 className="text-lg font-bold text-black">{pkg.title}</h1>
               <p className="text-xl mt-2">{pkg.price}</p>
               <hr className="w-full my-2 border-t border-pink-700" />
               <h4>{pkg.duration}</h4>
               <hr className="w-full my-2 border-t border-pink-700" />
-              <p className={`text-center text-sm ${index === 1 ? 'line-clamp-9' : ''}`}> 
+              <p
+                className={`text-center text-sm ${
+                  index === 1 ? "line-clamp-9" : ""
+                }`}
+              >
                 {pkg.info}
               </p>
               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
