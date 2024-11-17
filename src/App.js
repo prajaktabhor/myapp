@@ -8,21 +8,22 @@ import AddAnOption from "./Component/AddAnOption";
 import BookingSummary from "./Component/BookingSummary";
 import Login from "./Component/Login";
 import SignUp from "./Component/SignUp";
+import Register from "./Component/Register";
 function App() {
   return (
     <>
-      <File/>
+      {/* <File/> */}
       {/* <Booking/> */}
       {/* <AddAnOption/>  */}
       {/* <BookingSummary/> */}
-
+      <Register/>
       <Router>
         <Routes>
           <Route path="/" element={<Booking />} />
 
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-
+          <Route path="/signup" element={<SignUp />} /> 
+            <Register/>
         </Routes>
       </Router>
     </>
